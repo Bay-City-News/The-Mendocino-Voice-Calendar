@@ -82,7 +82,7 @@ class CityUkiahApiSpider(scrapy.Spider):
                 "address": meta["location"] or "300 Seminary Ave, Ukiah, CA 95482",
             },
             links=links,
-            source="https://cityofukiah.com/meetings/",  
+            source="https://cityofukiah.com/meetings/",
             # Source site for public context
         )
 
