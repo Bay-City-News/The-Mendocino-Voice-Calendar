@@ -60,7 +60,11 @@ class CityUkiahApiSpider(scrapy.Spider):
             file_id = f.get("fileId")
             title = f.get("name") or f.get("displayName") or "Document"
             if file_id:
-                url = f"https://ukiahca.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId={file_id},plainText=false)"
+                url = (
+                    f"https://ukiahca.api.civicclerk.com/v1/Meetings/"
+                    f"GetMeetingFileStream(fileId={file_id},plainText=false)"
+                )
+
                 links.append({"href": url, "title": title})
 
         start_dt = self._parse_datetime(meta["start"])
@@ -78,7 +82,8 @@ class CityUkiahApiSpider(scrapy.Spider):
                 "address": meta["location"] or "300 Seminary Ave, Ukiah, CA 95482",
             },
             links=links,
-            source=f"https://cityofukiah.com/meetings/",  # Source site for public context
+            source="https://cityofukiah.com/meetings/",  
+            # Source site for public context
         )
 
         meeting["status"] = self._get_status(meeting)
