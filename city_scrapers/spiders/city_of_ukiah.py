@@ -13,7 +13,9 @@ class CityUkiahApiSpider(scrapy.Spider):
 
     # CivicClerk base API
     meetings_url = "https://ukiahca.api.civicclerk.com/v1/Meetings/ListMeetings"
-    files_url_template = "https://ukiahca.api.civicclerk.com/v1/Meetings/GetMeetingFiles?meetingId={}"
+    files_url_template = (
+        "https://ukiahca.api.civicclerk.com/v1/Meetings/GetMeetingFiles?meetingId={}"
+    )
 
     def start_requests(self):
         # This fetches meetings from 2024 to 2026
