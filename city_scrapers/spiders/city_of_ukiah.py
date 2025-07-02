@@ -100,3 +100,4 @@ class CityUkiahApiSpider(scrapy.Spider):
         # Generate a unique ID using timestamp and title
         dt_str = meeting["start"].strftime("%Y%m%d%H%M")
         return f"{self.name}_{dt_str}_{meeting['title'].lower().replace(' ', '_')[:20]}"
+
