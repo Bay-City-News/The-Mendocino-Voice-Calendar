@@ -1,8 +1,10 @@
 import json
-import scrapy
 from datetime import datetime
-from city_scrapers_core.items import Meeting
+
+import scrapy
 from city_scrapers_core.constants import BOARD
+from city_scrapers_core.items import Meeting
+
 
 class CityUkiahApiSpider(scrapy.Spider):
     name = "city_ukiah_api"
